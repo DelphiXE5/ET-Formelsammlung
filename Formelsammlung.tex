@@ -1,0 +1,86 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+
+\usepackage[T1]{fontenc}
+\usepackage{ucs}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb, amstext}
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+% \usepackage[T1]{fontenc}
+% \newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
+\setlength{\textwidth}{460pt}
+\title{Formelsammlung elektrische und magnetische Felder}
+\author{Ron Gruse}
+\date{\today{}, Dresden}
+
+\begin{document}
+% \changefont{phv}{m}{n}
+\maketitle
+\tableofcontents
+\newpage
+\section{Grundgleichungen}
+{\renewcommand{\arraystretch}{1.5}%
+\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}|p{0.25\textwidth}|p{0.35\textwidth}|l|} 
+	\hline 
+	Formelname & Formel & Einheiten und Größen \\
+	\hline
+	Coulombsches Gesetz & \(\vec F = k\cdot\frac{Q_1 \cdot Q_2}{|{\vec{r_1} - \vec{r_2}}|^2} \cdot \vec{e}_{\vec{r_1}-\vec{r_2}}\) & [F] = N \\
+	& & [Q] = C = A \(\cdot\) s \\
+	& \(\vec F = k\cdot Q_1 \cdot Q_2 \cdot \frac{\vec{r_1} - \vec{r_2}}{|{\vec{r_1} - \vec{r_2}}|^3}\) & k \ldots Propotionalitätskonstante \\ 
+	& & \hspace{8.5mm}%
+	häufig verwendet: \(\frac{1}{4\pi \cdot \epsilon_0}\)\\
+	& & \(\vec{r}_n\) \ldots Ortsvektoren \\
+	\hline
+	% Kontinuierliche \newline Ladungsverteilung & & \\
+	Linienladung & \(Q = \int\limits_{C}{} \lambda(\vec{r}) \cdot dr\) & \(\lambda = \frac{dQ}{dr}\), \([\lambda] = \frac{C}{cm}\)\\
+	& \(Q = \lambda_0 \cdot l\) für \( \lambda = \lambda_0 = const.\) &  l \ldots Länge von C\\
+	Flächenladung & \(Q = \iint\limits_{A}{} \sigma \cdot dA\) & \([\sigma] = \frac{Q}{cm^2}\)\\
+	& \(Q = \sigma_0 \cdot A \) für \(\sigma = \sigma_0 = const.\) & \\
+	Raumladung & \(Q = \iiint\limits_{V}{} \rho \cdot dV \) & \([\rho] = \frac{Q}{cm^3}\) \\ 
+	\hline
+\end{tabularx}
+\section{Mathematik}
+\label{sec:mathematik}
+\subsection{Unterstufe}
+\label{sec:unterstufe}
+\begin{equation*}
+	\frac{1}{a} +\frac{1}{b} = \frac{a+b}{ab}
+\end{equation*}
+\subsection{Oberstufe}
+\label{sec:oberstufe}
+\begin{equation}
+	\label{eq:1}
+	\left(\frac{a}{b} \right)' = 0
+\end{equation}
+\begin{equation}
+	\label{eq:2}
+	\int\limits_{a}^{b} x^{2} \, dx = \frac{ b^3 -a^3}{3}
+\end{equation}
+Es gilt die Invariante \(b \neq 0\)\footnote{Nein tut es nicht}
+Die Gleichung \eqref{eq:1}
+
+\newpage
+\begin{tabularx}{\textwidth}{p{0.25\textwidth}|r}
+	Name & Alter \\
+	\hline
+	Hans & 05    \\
+\end{tabularx}
+
+\begin{center}
+	blondgelockter Knabe mit kohlrabenschwarzem Haar auf die grüne Bank
+	sich setzte, die gelb angestrichen war.
+	\vspace{4mm}
+	Alice kann es einfach nicht lassen, sie muß dem weißen Kaninchen mit
+	der großen Uhr folgen und landet prompt im Wunderland. Auf ihrer Reise
+	durch diese fröhlich bunte, aber auch sehr eigenartige Welt begegnet
+	sie einer gestiefelten Raupe, dem verrückten Hutmacher und ist zu Gast
+	bei einer nicht Geburtstags-Party. Einer hinterlistigen Tigerkatze hat
+	es das Mädchen schließlich zu verdanken, daß sie den Zorn der
+	Herz-Königin auf sich zieht. So etwas kann einem eigentlich nur im
+	Traum passieren.
+\end{center}
+
+\end{document}
