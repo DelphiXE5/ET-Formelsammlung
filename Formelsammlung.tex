@@ -4,9 +4,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{ucs}
 \usepackage[ngerman]{babel}
+\usepackage[nosumlimits]{amsmath}
 \usepackage{amsmath, amssymb, amstext}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{longtable}
 
 % \usepackage[T1]{fontenc}
 % \newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
@@ -18,28 +20,42 @@
 
 \begin{document}
 % \changefont{phv}{m}{n}
+\setlength\abovedisplayshortskip{0pt}
+\setlength\belowdisplayshortskip{0pt}
+\setlength\abovedisplayskip{20pt}
+\setlength\belowdisplayskip{20pt}
 \maketitle
 \tableofcontents
 \newpage
 \section{Grundgleichungen}
 {\renewcommand{\arraystretch}{1.5}%
-\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}|p{0.25\textwidth}|p{0.35\textwidth}|l|} 
-	\hline 
-	Formelname & Formel & Einheiten und Größen \\
+\begin{tabularx}{1.05\textwidth}{@{\extracolsep{\fill}}|p{0.25\textwidth}|p{0.35\textwidth}|p{0.35\textwidth}|}
 	\hline
-	Coulombsches Gesetz & \(\vec F = k\cdot\frac{Q_1 \cdot Q_2}{|{\vec{r_1} - \vec{r_2}}|^2} \cdot \vec{e}_{\vec{r_1}-\vec{r_2}}\) & [F] = N \\
-	& & [Q] = C = A \(\cdot\) s \\
-	& \(\vec F = k\cdot Q_1 \cdot Q_2 \cdot \frac{\vec{r_1} - \vec{r_2}}{|{\vec{r_1} - \vec{r_2}}|^3}\) & k \ldots Propotionalitätskonstante \\ 
-	& & \hspace{8.5mm}%
-	häufig verwendet: \(\frac{1}{4\pi \cdot \epsilon_0}\)\\
-	& & \(\vec{r}_n\) \ldots Ortsvektoren \\
+	Formelname                 & Formel                                                                                                                                                   & Einheiten und Größen                                          \\
 	\hline
-	% Kontinuierliche \newline Ladungsverteilung & & \\
-	Linienladung & \(Q = \int\limits_{C}{} \lambda(\vec{r}) \cdot dr\) & \(\lambda = \frac{dQ}{dr}\), \([\lambda] = \frac{C}{cm}\)\\
-	& \(Q = \lambda_0 \cdot l\) für \( \lambda = \lambda_0 = const.\) &  l \ldots Länge von C\\
-	Flächenladung & \(Q = \iint\limits_{A}{} \sigma \cdot dA\) & \([\sigma] = \frac{Q}{cm^2}\)\\
-	& \(Q = \sigma_0 \cdot A \) für \(\sigma = \sigma_0 = const.\) & \\
-	Raumladung & \(Q = \iiint\limits_{V}{} \rho \cdot dV \) & \([\rho] = \frac{Q}{cm^3}\) \\ 
+	Coulombsches Gesetz        & \(\vec F = k\cdot\frac{Q_1 \cdot Q_2}{|{\vec{r_1} - \vec{r_2}}|^2} \cdot \vec{e}_{\vec{r_1}-\vec{r_2}}\)                                                 & [F] = N                                                       \\
+	                           &                                                                                                                                                          & [Q] = C = A \(\cdot\) s                                       \\
+	                           & \(\vec F = k\cdot Q_1 \cdot Q_2 \cdot \frac{\vec{r_1} - \vec{r_2}}{|{\vec{r_1} - \vec{r_2}}|^3}\)                                                        & k \ldots Propotionalitätskonstante                            \\
+	                           &                                                                                                                                                          & häufig verwendet: \(\frac{1}{4\pi \cdot \epsilon_0}\)         \\
+	                           &                                                                                                                                                          & \(\vec{r}_n\) \ldots Ortsvektoren                             \\
+	\hline
+	% \label{sec:Ladungsverteilung}
+	Linienladung               & \(Q = \int\limits_{C}{} \lambda(\vec{r}) \cdot dr\)                                                                                                      & \(\lambda = \frac{dQ}{dr}\), \([\lambda] = \frac{C}{cm}\)     \\
+	                           & \(Q = \lambda_0 \cdot l\) für \( \lambda = \lambda_0 = const.\)                                                                                          & l \ldots Länge von C                                          \\
+	Flächenladung              & \(Q = \iint\limits_{A}{} \sigma \cdot dA\)                                                                                                               & \([\sigma] = \frac{Q}{cm^2}\)                                 \\
+	                           & \(Q = \sigma_0 \cdot A \) für \(\sigma = \sigma_0 = const.\)                                                                                             & \([A] = cm^2\)                                                \\
+	Raumladung                 & \(Q = \iiint\limits_{V}{} \rho \cdot dV \)                                                                                                               & \([\rho] = \frac{Q}{cm^3}\)                                   \\
+	                           & \(Q = \rho \cdot V\)  für \(\rho = \rho_0 = const. \)                                                                                                    & \([V] = cm^3 \)                                               \\
+	\hline
+	Elektrische Feldstärke     & \(\vec {E} =\frac{\vec{F}}{Q} = \frac{1}{4\pi\epsilon_0} Q_1 \cdot \frac{\vec{r} - \vec{r_1}}{|\vec{r} - \vec{r_1}|^3} \)                                & \([E] = \frac{N}{C} = \frac{\frac{Ws}{m}}{As} = \frac{V}{m}\) \\ [1ex]
+	\hspace{5mm} Superposition & \(\vec{E} = \frac{1}{4\pi\epsilon_0} \sum\limits_{i=1}^N Q_i \cdot \frac{\vec{r} - \vec{r_i}}{|\vec{r} - \vec{r_i}|^3} = \sum\limits_{i=1}^N \vec{E_i}\) & \([\epsilon_0] = \frac{As}{Vm}\)                              \\ [2ex]
+	\hline
+	Potenzial                  & \(\vec{E} = - grad(\varphi), E \perp \varphi\)                                                                                                           & \([\varphi] = V = \frac{As}{\frac{As}{Vm} \cdot m}\)          \\
+	\hspace{5mm}Punktladung    & \(\varphi(\vec{r}) = \frac{1}{4\pi\epsilon_0} \cdot \frac{Q}{|\vec{r}-\vec{r'}|}\)                                                                       & r \ldots Ortsvektor der Ladung Q                              \\[2ex]
+	\hspace{5mm}Superposition  & \(\varphi(\vec{r}) = \frac{1}{4\pi\epsilon_0} \cdot \sum\limits_{i=1}^N \frac{Q_i}{|\vec{r} - \vec{r_i}|}\)                                              &                                                               \\
+	\hline
+	Arbeit                     & \(W_{AB} = Q\int\limits_{A}^B \vec{E}d\vec{r} = -Q\int\limits_{A}^B\varphi d\vec{r} = Q\cdot[\varphi(A) - \varphi(B)] = Q \cdot U \)                     & \([W] = C \cdot V = N\)\newline \([U] = V\)                   \\
+	&\(\oint \vec{E} d\vec{r} = 0\) & \\
 	\hline
 \end{tabularx}
 \section{Mathematik}
@@ -63,11 +79,6 @@ Es gilt die Invariante \(b \neq 0\)\footnote{Nein tut es nicht}
 Die Gleichung \eqref{eq:1}
 
 \newpage
-\begin{tabularx}{\textwidth}{p{0.25\textwidth}|r}
-	Name & Alter \\
-	\hline
-	Hans & 05    \\
-\end{tabularx}
 
 \begin{center}
 	blondgelockter Knabe mit kohlrabenschwarzem Haar auf die grüne Bank
